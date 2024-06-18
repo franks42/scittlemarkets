@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/scittle@0.6.17/dist/scittle.js" type="application/javascript"></script>
+    <script src="cljs/script.cljs" type="application/x-scittle"></script>
+    <script type="application/x-scittle">
+      (defn my-alert []
+       (js/alert "You clicked!"))
+      ;; export function to use from JavaScript:
+      (set! (.-my_alert js/window) my-alert)
+      ;(set! (.-my_alert42 js/window) script/my-alert42)
+    </script>
+  </head>
+  <body>
+    <button onclick="my_alert()">
+      Click me!
+    </button>
+    <button onclick="my_alert42()">
+        Click me 42!
+      </button>
+    </body>
+</html>
